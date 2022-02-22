@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'PT Sans', sans-serif;
+}
+
+:root {
+  --font-size-14: 14px;
+  --form-element-height: 28px;
+  --padding-form: 9px 13px;
+  --margin-block: 10px;
+  --border-color-1: #C4C4C4;
+  --font-color-black: #000;
+  --font-color-red: #FF0D29;
+  --font-color-gray: #9B9B9B;
+  --background-main: #F7F6F4;
+  --background-white: #fff;
+  --background-button-1: #E5E5E5;
+}
+
+.container {
+  padding: 9vh 8vw;
+  background-color: var(--background-main);
+  min-height: 100vh;
+}
+
+.grey-button {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: var(--form-element-height);
+  padding: var(--padding-form);
+  background-color: var(--background-button-1);
+  font-size: var(--font-size-14);
+  cursor: pointer;
+}
+.grey-button > img,
+.grey-button > span {
+  margin-left: var(--margin-block);
+}
+
+.filter-form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 4fr 1fr max-content;
+}
+.filter-form__search-input,
+.filter-form__status_all,
+.filter-form__basket-clear {
+  height: var(--form-element-height);
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-14);
+  color: var(--font-color-black);
+  padding: var(--padding-form);
+}
+.filter-form__search-input,
+.filter-form__status_all {
+  border: 1px solid var(--border-color-1);
+}
+.filter-form__search-input-img {
+  margin-right: 20px;
+  cursor: pointer;
+}
+.filter-form__search-input-text {
+  flex-grow: 1;
+  font-size: var(--font-size-14);
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.filter-form__status {
+  position: relative;
+  cursor: pointer;
+}
+.filter-form__status_all {
+  display: flex;
+  justify-content: space-between;
+}
+.filter-form__status_all::-webkit-details-marker {
+  display: none;
+}
+.filter-form__status_all::after {
+  content: ' ';
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  transform: rotate(-45deg) translateY(50%);
+  transition: .5s;
+}
+.filter-form__status[open] .filter-form__status_all::after {
+  transform: scaleY(-1) rotate(-45deg) translateY(50%);
+}
+.filter-form__status__list {
+  background-color: var(--background-white);
+  width: 100%;
+  position: absolute;
+  z-index: 99;
+  top: 120%;
+  left: 0;
+  box-shadow: 0px 20px 25px -5px rgba(26, 32, 44, 0.1), 0px 10px 10px -5px rgba(26, 32, 44, 0.04);
+  padding: var(--padding-form);
+}
+.filter-form__status__list label {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-14);
+  margin-bottom: var(--margin-block);
+  cursor: pointer;
+}
+.filter-form__status__list label:last-child {
+  margin-bottom: 0;
+}
+.filter-form__status__list label input {
+  cursor: pointer;
+  margin-right: var(--margin-block);
+}
+.filter-form__status__list label:hover {
+  color: var(--font-color-red);
+}
+
+.filter-form__basket-clear {
+  background-color: var(--background-button-1);
+  cursor: pointer;
+}
+.filter-form__basket-clear > span {
+  font-family: none;
+  font-size: 2.3rem;
+}
+
+.action {
+  display: flex;
+  margin: 32px 0 20px;
+  padding-left: 25px;
+}
+.action__check-all {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-14);
+  cursor: pointer;
+}
+.action__check-all > input {
+  margin-right: var(--margin-block);
+}
+.action .grey-button {
+  margin-left: var(--margin-block);
+}
+
+.objects-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 23px;
+}
+
+.object {
+  position: relative;
+  display: grid;
+  grid-template-columns: max-content 1.5fr 1fr;
+  gap: 25px;
+  padding: 25px 0 25px 25px;
+  border: 1px solid #E5E5E5;
+  background-color: var(--background-white);
+  font-size: var(--font-size-14);
+  line-height: 20px;
+}
+.object-checkbox {
+  align-self: center;
+  cursor: pointer;
+}
+.object__section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.object__section__header__price {
+  color: var(--font-color-red);
+  font-weight: bold;  
+}
+.object__section__header__type {
+  position: relative;
+  display: inline-block;
+  padding: 3px 15px 3px 38px;
+  border-radius: 32px;
+  box-shadow: 0px 0px 2px rgba(94, 119, 157, 0.25);
+  margin-left: 15px;
+  font-size: 12px;
+  color: #232735;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+.object__section__header__type_drop {
+  display: none;
+  position: absolute;
+  top: 140%;
+  width: max-content;
+  padding: 12px;
+  background: #2D2D2D;
+  opacity: 0.7;
+  font-size: 13px;
+  font-weight: 100;
+  color: #fff;
+}
+.object__section__header__type_drop::before {
+  content: ' ';
+  position: absolute;
+  top: -7px;
+  left: 7px;
+  width: 0;
+  height: 0;
+  border-bottom: 7px solid #2D2D2D;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+.object__section__header__type[data-type="apartment"] {
+  background-image: url(icons/apartment.png);
+}
+.object__section__header__type[data-type="parking"] {
+  background-image: url(icons/parking.png);
+  cursor: pointer;
+}
+.object__section__header__type[data-type="parking"]:hover .object__section__header__type_drop {
+  display: block;
+}
+.object__section__header_address {
+  color: var(--font-color-gray);
+}
+
+.object__section__main {
+  display: flex;
+  margin: 15px 0;
+}
+.object__section__main__left {
+  padding-right: 20px;
+  border-right: 1px solid var(--border-color-1);
+}
+.object__section__main__right {
+  padding-left: 20px;
+}
+.object__section__main__right sup {
+  font-size: 7px;
+  line-height: 0;
+}
+
+.object__section__footer {
+  position: relative;
+}
+.object__section__footer-img {
+  position: absolute;
+  top: 4px;
+  left: -18px;
+}
+
+.object__section__header[data-status] {
+  width: max-content;
+  align-self: flex-end;
+  padding: 6px 9px;
+}
+.object__section__header[data-status] span {
+  font-size: 20px;
+  margin-right: 6px;
+}
+.object__section__header[data-status="entity"] {
+  background-color: #FFE4E4;
+  color: #DD4C5D;
+}
+.object__section__header[data-status="person"] {
+  background-color: #D6F5FF;
+  color: #0291C1;
+}
+.object__section__header[data-status="booked"] {
+  background-color: #EDEDED;
+  color: #686868;
+}
+.object__section__header[data-status="sold"] {
+  background-color: #CCCCCC;
+  color: #808080;
+}
+.object__section__main-layout {
+  width: 90%;
+  height: auto;
+}
+.object__section__footer {
+  color: #9B9B9B;
+
+}

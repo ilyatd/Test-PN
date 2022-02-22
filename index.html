@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Тестовое Петербургская Недвижимость</title>
+</head>
+<body>
+  <div class="container">
+
+    <form class="filter-form" id="filter-form">
+      <div class="filter-form__search-input">
+        <img class="filter-form__search-input-img" src="icons/search.png" id="search">
+        <input class="filter-form__search-input-text" type="text" name="search" placeholder="Введите ЖК / корпус / № квартиры / № паркинга"></input>
+      </div>
+      <details class="filter-form__status">
+        <summary class="filter-form__status_all">Все статусы</summary>
+        <div class="filter-form__status__list">
+          <label><input type="checkbox" name="booked" value="booked">Забронированно</label>
+          <label><input type="checkbox" name="sold" value="sold">Продано</label>
+          <label><input type="checkbox" name="active" value="active">Активно</label>
+        </div>
+      </details>
+      <div class="grey-button filter-form__basket-clear" id="basket-clear">Очистить корзину <span>&times;</span></div>
+    </form>
+
+    <div class="action">
+      <label class="action__check-all"><input type="checkbox" id="check-all" value="all">все</label>
+      <div class="grey-button" id="action-save">Сохранить <img src="icons/pdf.png"></div>
+      <div class="grey-button" id="action-submit">Отправить <img src="icons/send.png"></div>
+      <div class="grey-button" id="action-dell">Удалить <img src="icons/dell.png"></div>
+    </div>
+
+    <div class="objects-container">
+
+      <div class="object" data-id="1">
+        <input class="object-checkbox" type="checkbox" name="object" value="1">
+        <div class="object__section">
+          <div class="object__section__header">
+            <div class="object__section__header__price">
+              7 733 300 руб.
+              <span class="object__section__header__type" data-type="apartment">
+                Квартира
+              </span>
+            </div>
+            <div class="object__section__header__name">
+              Чистое Небо, <span class="object__section__header_address">корпус 10, III кв. 2022 г.</span>
+            </div>
+          </div>
+          <div class="object__section__main">
+            <div class="object__section__main__left">
+              <div>кв. 64</div>
+              <div>1 комн. кв.</div>
+            </div>
+            <div class="object__section__main__right">
+              <div>234.38 м<sup>2</sup></div>
+              <div>7 этаж</div>
+            </div>
+          </div>
+          <div class="object__section__footer">
+            <img class="object__section__footer-img" src="icons/map-point.png">
+            Лен. область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1
+          </div>
+        </div>
+        <div class="object__section">
+          <div class="object__section__header" data-status="entity"><span>&bull;</span>Уступка от юр. лица</div>
+          <div class="object__section__main">
+            <img class="object__section__main-layout" src="imgs//object-layout.svg">
+          </div>
+          <div class="object__section__footer">Добавлено 21/11/2020</div>
+        </div>
+      </div>
+
+      <div class="object" data-id="2">
+        <input class="object-checkbox" type="checkbox" name="object" value="2">
+        <div class="object__section">
+          <div class="object__section__header">
+            <div class="object__section__header__price">
+              7 733 300 руб.
+              <span class="object__section__header__type" data-type="apartment">
+                Квартира
+              </span>
+            </div>
+            <div class="object__section__header__name">
+              Зеленый квартал на Пулковских высотах, <span class="object__section__header_address">корпус 10, III кв. 2022 г.</span>
+            </div>
+          </div>
+          <div class="object__section__main">
+            <div class="object__section__main__left">
+              <div>кв. 64</div>
+              <div>1 комн. кв.</div>
+            </div>
+            <div class="object__section__main__right">
+              <div>234.38 м<sup>2</sup></div>
+              <div>7 этаж</div>
+            </div>
+          </div>
+          <div class="object__section__footer">
+            <img class="object__section__footer-img" src="icons/map-point.png">
+            Комендантский пр., уч. 1 Каменка
+          </div>
+        </div>
+        <div class="object__section">
+          <div class="object__section__header" data-status="person"><span>&bull;</span>Уступка от физ. лица</div>
+          <div class="object__section__main">
+            <img class="object__section__main-layout" src="imgs//object-layout.svg">
+          </div>
+          <div class="object__section__footer">Добавлено 21/11/2020</div>
+        </div>
+      </div>
+
+      <div class="object" data-id="3">
+        <input class="object-checkbox" type="checkbox" name="object" value="3">
+        <div class="object__section">
+          <div class="object__section__header">
+            <div class="object__section__header__price">
+              800 300 руб.
+              <span class="object__section__header__type" data-type="parking">
+                Паркинг
+                <span class="object__section__header__type_drop">Подземная встроенно-пристроенная</span>
+              </span>
+            </div>
+            <div class="object__section__header__name">
+              Зеленый квартал на Пулковских высотах, <span class="object__section__header_address">корпус 10, III кв. 2022 г.</span>
+            </div>
+          </div>
+          <div class="object__section__main">
+            <div class="object__section__main__left">
+              <div>№ 7-10-2 (ПИБ №68)</div>
+            </div>
+            <div class="object__section__main__right">
+              <div>15 м<sup>2</sup></div>
+            </div>
+          </div>
+          <div class="object__section__footer">
+            <img class="object__section__footer-img" src="icons/map-point.png">
+            Ленинградская область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1
+          </div>
+        </div>
+        <div class="object__section">
+          <div class="object__section__header" data-status="booked"><span>&bull;</span>Забронировано</div>
+          <div class="object__section__main">
+            <img class="object__section__main-layout" src="imgs//object-layout.svg">
+          </div>
+          <div class="object__section__footer">Добавлено 21/11/2020</div>
+        </div>
+      </div>
+
+      <div class="object" data-id="4">
+        <input class="object-checkbox" type="checkbox" name="object" value="4">
+        <div class="object__section">
+          <div class="object__section__header">
+            <div class="object__section__header__price">
+              800 300 руб.
+              <span class="object__section__header__type" data-type="parking">
+                Паркинг
+                <span class="object__section__header__type_drop">Подземная встроенно-пристроенная</span>
+              </span>
+            </div>
+            <div class="object__section__header__name">
+              Зеленый квартал на Пулковских высотах, <span class="object__section__header_address">корпус 10, III кв. 2022 г.</span>
+            </div>
+          </div>
+          <div class="object__section__main">
+            <div class="object__section__main__left">
+              <div>№ 7-10-2 (ПИБ №68)</div>
+            </div>
+            <div class="object__section__main__right">
+              <div>15 м<sup>2</sup></div>
+            </div>
+          </div>
+          <div class="object__section__footer">
+            <img class="object__section__footer-img" src="icons/map-point.png">
+            Лен. область, Всеволожский район, д. Кудрово, ул. Столичная, д. 5, к. 1
+          </div>
+        </div>
+        <div class="object__section">
+          <div class="object__section__header" data-status="sold"><span>&bull;</span>Продано</div>
+          <div class="object__section__main">
+            <img class="object__section__main-layout" src="imgs//object-layout.svg">
+          </div>
+          <div class="object__section__footer">Добавлено 21/11/2020</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
